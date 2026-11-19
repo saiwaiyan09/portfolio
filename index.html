@@ -3,11 +3,136 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cloud & DevOps Portfolio</title>
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+  <title>Cloud Infrastructure & DevOps Engineer</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0B1425;
+      color: #F8FAFC;
+    }
+
+    header {
+      padding: 24px 8%;
+      border-bottom: 1px solid #1E293B;
+    }
+
+    .logo {
+      color: #22D3EE;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .hero {
+      min-height: 75vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 60px 8%;
+    }
+
+    .subtitle {
+      color: #22D3EE;
+      font-weight: bold;
+    }
+
+    h1 {
+      font-size: clamp(36px, 6vw, 64px);
+      max-width: 800px;
+      margin: 16px 0;
+    }
+
+    .highlight {
+      color: #22D3EE;
+    }
+
+    .description {
+      max-width: 650px;
+      color: #94A3B8;
+      line-height: 1.8;
+      font-size: 18px;
+    }
+
+    .button {
+      display: inline-block;
+      background: #2563EB;
+      color: white;
+      padding: 14px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .actions {
+      margin-top: 28px;
+    }
+
+    footer {
+      padding: 24px 8%;
+      border-top: 1px solid #1E293B;
+      color: #94A3B8;
+      font-size: 14px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Cloud Infrastructure & DevOps Engineer</h1>
-  <p>My professional portfolio is coming soon.</p>
+  <header>
+    <div class="logo">Cloud / DevOps</div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="subtitle">WELCOME TO MY PORTFOLIO</p>
+
+      <h1>
+        Cloud Infrastructure &
+        <span class="highlight">DevOps Engineer</span>
+      </h1>
+
+      <p class="description">
+        IT infrastructure and networking professional
+        with 5+ years of experience, focused on AWS,
+        Terraform, Kubernetes, Linux, and CI/CD automation.
+      </p>
+
+      <div class="actions">
+        <a class="button" href="#about">
+          Explore My Portfolio
+        </a>
+      </div>
+    </section>
+
+    <section id="about" class="hero">
+      <p class="subtitle">ABOUT ME</p>
+      <h1>Building Reliable Cloud Infrastructure</h1>
+      <p class="description">
+        This portfolio will showcase my technical skills,
+        infrastructure automation projects, and
+        cloud engineering experience.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    Cloud Infrastructure & DevOps Portfolio
+  </footer>
 </body>
 </html>
