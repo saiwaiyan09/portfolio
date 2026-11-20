@@ -1,0 +1,69 @@
+backend:
+  name: github
+  repo: saiwaiyan09/portfolio
+  branch: feature/decap-cms
+
+media_folder: "assets/uploads"
+public_folder: "/portfolio/assets/uploads"
+
+collections:
+  - name: "profile"
+    label: "Profile"
+    files:
+      - name: "profile"
+        label: "Profile and About"
+        file: "_data/profile.yml"
+        fields:
+          - label: "Name"
+            name: "name"
+            widget: "string"
+          - label: "Headline"
+            name: "headline"
+            widget: "object"
+            fields:
+              - label: "Before highlighted text"
+                name: "before"
+                widget: "string"
+              - label: "Highlighted text"
+                name: "highlight"
+                widget: "string"
+              - label: "After highlighted text"
+                name: "after"
+                widget: "string"
+          - label: "Summary"
+            name: "summary"
+            widget: "text"
+          - label: "About"
+            name: "about"
+            widget: "object"
+            fields:
+              - label: "Heading"
+                name: "heading"
+                widget: "object"
+                fields:
+                  - label: "Before highlighted text"
+                    name: "before"
+                    widget: "string"
+                  - label: "Highlighted text"
+                    name: "highlight"
+                    widget: "string"
+              - label: "Paragraphs"
+                name: "paragraphs"
+                widget: "list"
+                field:
+                  label: "Paragraph"
+                  name: "paragraph"
+                  widget: "text"
+              - label: "Stats"
+                name: "stats"
+                widget: "list"
+                fields:
+                  - label: "Value"
+                    name: "value"
+                    widget: "string"
+                  - label: "Label"
+                    name: "label"
+                    widget: "string"
+              - label: "Note"
+                name: "note"
+                widget: "text"
