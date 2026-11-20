@@ -17,6 +17,24 @@
     @media(max-width:570px){.container{width:min(var(--max),calc(100% - 32px))}.hero{padding:65px 0}.hero h1{font-size:2.75rem}.two,.three{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.stats .stat:last-child{grid-column:1/-1}.architecture{min-height:0;padding:15px}.featured-content{padding:24px}.featured-art{padding:20px}.section{padding:58px 0}.hero-actions .btn{width:100%}.footer .container{flex-direction:column}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
   </style>
+  <style>
+    .featured-inner{grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr)}
+    .featured-art{padding:clamp(22px,4vw,48px)}
+    .featured-content{padding:clamp(24px,4vw,48px)}
+    .featured-content h3{font-size:clamp(1.6rem,2.4vw,2.1rem);letter-spacing:-.03em}
+    .featured-kicker{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    .planned-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border:1px solid #34718c;border-radius:999px;background:#102b41;color:#9cecff;font:600 .7rem 'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.04em}
+    .planned-badge:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px #22d3ee88}
+    .project-details{padding:clamp(22px,3vw,34px);margin-top:20px;scroll-margin-top:100px}
+    .project-details h3{font-size:clamp(1.35rem,2.4vw,1.8rem);margin:8px 0 0}
+    .architecture-flow{list-style:none;padding:0;margin:24px 0 20px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;counter-reset:architecture-step}
+    .architecture-step{counter-increment:architecture-step;position:relative;min-width:0;padding:19px 16px 18px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(145deg,#142944,#0f1d31)}
+    .architecture-step:before{content:"0" counter(architecture-step);display:block;margin-bottom:12px;color:var(--cyan);font:600 .75rem 'JetBrains Mono',monospace;letter-spacing:.08em}
+    .architecture-step h4{margin:0 0 7px;font-size:1rem;line-height:1.35}
+    .architecture-step p{margin:0;color:var(--muted);font-size:.86rem;line-height:1.6}
+    @media(max-width:980px){.featured-inner{grid-template-columns:1fr}.featured-content{order:0}.featured-art{order:1;min-height:270px}.architecture-flow{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:570px){.architecture-flow{grid-template-columns:1fr;gap:10px}.architecture-step{padding:16px}}
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -76,8 +94,36 @@
       <div class="timeline"><div class="timeline-item"><div class="panel"><div class="eyebrow">Professional background</div><h3>IT Infrastructure & Networking</h3><p>5+ years of professional experience in IT infrastructure and networking. Add verified employers, job titles, dates, responsibilities, and accomplishments here before sharing a detailed career timeline.</p></div></div><div class="timeline-item"><div class="panel"><div class="eyebrow">Current technical focus</div><h3>Cloud & DevOps Engineering</h3><p>Developing and documenting hands-on work with AWS, Terraform, Kubernetes, GitHub Actions, and secure infrastructure patterns. This entry describes technical focus, not a separate employment position.</p></div></div></div>
     </div></section>
     <section id="projects" class="section"><div class="container"><div class="section-header"><div class="eyebrow">04 / Projects</div><h2>Featured <span class="gradient">Engineering Work</span></h2><p>Architecture-focused project documentation. The featured EKS architecture below is a planned implementation, not a verified deployment.</p></div>
-      <article class="panel featured"><div class="featured-inner"><div class="featured-art"><svg viewBox="0 0 490 320" role="img" aria-label="Planned Terraform AWS EKS CI/CD architecture"><defs><linearGradient id="pg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#2563eb"/><stop offset="1" stop-color="#22d3ee"/></linearGradient></defs><g stroke="#22d3ee" stroke-width="2" fill="none" stroke-dasharray="5 5"><path d="M245 65 V102 M245 155 V184 M245 237 V260"/><path d="M130 130 H166 M325 130 H362"/></g><g fill="#142f4f" stroke="url(#pg)" stroke-width="2"><rect x="145" y="8" width="200" height="57" rx="12"/><rect x="166" y="102" width="159" height="53" rx="12"/><rect x="151" y="184" width="189" height="53" rx="12"/><rect x="161" y="260" width="169" height="51" rx="12"/><rect x="3" y="104" width="127" height="52" rx="12"/><rect x="362" y="104" width="125" height="52" rx="12"/></g><g fill="#eaf6ff" font-family="monospace" font-size="13" text-anchor="middle"><text x="245" y="31">GitHub Actions</text><text x="245" y="48" fill="#9edaf0" font-size="10">CI / Approval / OIDC</text><text x="245" y="133">Terraform + AWS</text><text x="245" y="214">Private EKS + Helm</text><text x="245" y="290">NGINX + ALB</text><text x="66" y="133">Docker Hub</text><text x="424" y="133">CodeBuild</text></g></svg></div><div class="featured-content"><div class="eyebrow">Flagship Architecture / Planned Project</div><h3>Terraform AWS EKS NGINX CI/CD</h3><p>A planned end-to-end architecture for provisioning private EKS infrastructure with Terraform, deploying NGINX with Helm, and automating validated releases through GitHub Actions and AWS CodeBuild.</p><div class="tag-row"><span class="tag">AWS</span><span class="tag">Terraform</span><span class="tag">EKS</span><span class="tag">GitHub Actions</span><span class="tag">Helm</span><span class="tag">NGINX</span></div><div class="project-links"><a class="btn btn-primary btn-small" href="#project-details">View Architecture ↓</a><button class="btn btn-secondary btn-small" id="copy-project" type="button">Copy Case Study Link</button></div></div></div></article>
-      <div id="project-details" class="panel" style="padding:26px;margin-top:20px;scroll-margin-top:100px"><div class="eyebrow">Case Study Preview</div><h3 style="margin:8px 0">Planned Implementation & Evidence</h3><div class="grid three" style="margin-top:18px"><div><strong>Infrastructure</strong><p class="muted">VPC across two AZs, private EKS worker nodes, NAT gateways, S3 Terraform state locking.</p></div><div><strong>Delivery & Security</strong><p class="muted">GitHub OIDC, CodeBuild deployment, Docker Hub, Helm, Trivy, manual approvals.</p></div><div><strong>Operations</strong><p class="muted">ALB, ACM, Route 53, ExternalDNS, CloudWatch, managed Prometheus and Grafana.</p></div></div><p class="notice">Deployment screenshots, verified results, troubleshooting evidence, and GitHub source links will be added after the project is implemented and tested.</p></div>
+      <article class="panel featured">
+        <div class="featured-inner">
+          <div class="featured-art">
+            <svg viewBox="0 0 490 320" role="img" aria-label="Planned Terraform, AWS EKS, and CI/CD architecture">
+              <defs><linearGradient id="pg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#2563eb"/><stop offset="1" stop-color="#22d3ee"/></linearGradient></defs>
+              <g stroke="#22d3ee" stroke-width="2" fill="none" stroke-dasharray="5 5"><path d="M245 65 V102 M245 155 V184 M245 237 V260"/><path d="M130 130 H166 M325 130 H362"/></g>
+              <g fill="#142f4f" stroke="url(#pg)" stroke-width="2"><rect x="145" y="8" width="200" height="57" rx="12"/><rect x="166" y="102" width="159" height="53" rx="12"/><rect x="151" y="184" width="189" height="53" rx="12"/><rect x="161" y="260" width="169" height="51" rx="12"/><rect x="3" y="104" width="127" height="52" rx="12"/><rect x="362" y="104" width="125" height="52" rx="12"/></g>
+              <g fill="#eaf6ff" font-family="monospace" font-size="13" text-anchor="middle"><text x="245" y="31">GitHub Actions</text><text x="245" y="48" fill="#9edaf0" font-size="10">CI / Approval / OIDC</text><text x="245" y="133">Terraform + AWS</text><text x="245" y="214">Private EKS + Helm</text><text x="245" y="290">NGINX + ALB</text><text x="66" y="133">Docker Hub</text><text x="424" y="133">CodeBuild</text></g>
+            </svg>
+          </div>
+          <div class="featured-content">
+            <div class="featured-kicker"><div class="eyebrow">Flagship Architecture</div><span class="planned-badge">Planned architecture</span></div>
+            <h3>Terraform AWS EKS NGINX CI/CD</h3>
+            <p>A proposed delivery path from Terraform-managed AWS infrastructure to an NGINX service on EKS. The components below describe the intended design; no deployment or test results are presented.</p>
+            <div class="tag-row"><span class="tag">AWS</span><span class="tag">Terraform</span><span class="tag">EKS</span><span class="tag">GitHub Actions</span><span class="tag">Helm</span><span class="tag">NGINX</span></div>
+            <div class="project-links"><a class="btn btn-primary btn-small" href="#project-details">View Architecture ↓</a><button class="btn btn-secondary btn-small" id="copy-project" type="button">Copy Case Study Link</button></div>
+          </div>
+        </div>
+      </article>
+      <div id="project-details" class="panel project-details">
+        <div class="eyebrow">Planned delivery flow</div>
+        <h3>From infrastructure to observable service</h3>
+        <ol class="architecture-flow" aria-label="Planned project architecture steps">
+          <li class="architecture-step"><h4>Provision</h4><p>Terraform automates AWS infrastructure, including EKS with private worker nodes.</p></li>
+          <li class="architecture-step"><h4>Build &amp; publish</h4><p>GitHub Actions CI/CD builds the container image and publishes it to Docker Hub.</p></li>
+          <li class="architecture-step"><h4>Deploy</h4><p>AWS CodeBuild handles deployment, with Helm deploying NGINX to the EKS cluster.</p></li>
+          <li class="architecture-step"><h4>Route &amp; observe</h4><p>An AWS Application Load Balancer routes traffic; CloudWatch, Prometheus, and Grafana are planned for observability.</p></li>
+        </ol>
+        <p class="notice">This is a planned architecture. No deployment, testing, or verification results are claimed.</p>
+      </div>
       <div class="grid two" style="margin-top:20px"><article class="panel project-card"><div class="label">Security / Infrastructure</div><h3>HCP Boundary + Vault</h3><p>Hands-on configuration and troubleshooting work involving SSH access, credential brokering, and Vault SSH certificate signing for AWS targets. A polished case study can be added after verification.</p><div class="tag-row"><span class="tag">Boundary</span><span class="tag">Vault</span><span class="tag">AWS</span><span class="tag">SSH</span></div></article><article class="panel project-card"><div class="label">Future Project</div><h3>More Engineering Projects</h3><p>This space is reserved for an additional verified Cloud/DevOps project. No placeholder achievements or fabricated performance metrics.</p><div class="tag-row"><span class="tag">Coming Later</span></div></article></div>
     </div></section>
     <section id="certifications" class="section"><div class="container"><div class="section-header"><div class="eyebrow">05 / Certifications</div><h2>Certifications & <span class="gradient">Learning</span></h2><p>Verified certifications and credentials will appear here.</p></div><div class="panel cert-card"><h3>Certification details pending</h3><p>Once you provide completed certifications, we can add their official names, issuing organizations, credential links, and badges. No certification is claimed here yet.</p></div></div></section>
@@ -93,7 +139,7 @@
     const links=[...navigation.querySelectorAll('a')];
     if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){links.forEach(link=>link.classList.toggle('active',link.getAttribute('href')==='#'+entry.target.id))}})},{rootMargin:'-25% 0px -60% 0px'});sections.forEach(section=>observer.observe(section))}
     document.querySelector('#year').textContent=new Date().getFullYear();
-    document.querySelector('#copy-project').addEventListener('click',async function(){const url=window.location.origin+window.location.pathname+'#projects';try{await navigator.clipboard.writeText(url);this.textContent='Link copied ✓'}catch(e){this.textContent='Copy from address bar'}setTimeout(()=>this.textContent='Copy Case Study Link',2400)});
+    document.querySelector('#copy-project').addEventListener('click',async function(){const url=new URL('#project-details',window.location.href).href;try{if(!navigator.clipboard?.writeText)throw new Error('Clipboard API unavailable');await navigator.clipboard.writeText(url);this.textContent='Link copied ✓'}catch(e){const copiedManually=window.prompt('Copy the case study link:',url);this.textContent=copiedManually===null?'Copy Case Study Link':'Link ready to paste'}setTimeout(()=>this.textContent='Copy Case Study Link',2400)});
   </script>
 </body>
 </html>
