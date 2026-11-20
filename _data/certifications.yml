@@ -1,0 +1,9 @@
+eyebrow: "05 / Certifications"
+heading:
+  before: "Certifications &"
+  highlight: "Learning"
+description: "Verified certifications and credentials will appear here."
+empty_state:
+  heading: "Certification details pending"
+  description: "Once you provide completed certifications, we can add their official names, issuing organizations, credential links, and badges. No certification is claimed here yet."
+certifications: []

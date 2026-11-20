@@ -43,6 +43,17 @@
     .project-status{display:inline-flex;align-items:center;gap:8px;padding:5px 9px;border:1px solid #34718c;border-radius:999px;background:#102b41;color:#9cecff;font:600 .68rem 'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.04em}
     .project-image{display:block;width:100%;height:auto;max-height:230px;object-fit:cover;border:1px solid var(--line);border-radius:12px;margin:0 0 16px}
     .featured-image{width:100%;height:auto;max-height:320px;object-fit:cover;margin:0;border-color:#2d5379}
+    .certification-grid{align-items:stretch}
+    .certification-card{display:flex;flex-direction:column;align-items:flex-start}
+    .certification-badge{display:block;width:auto;max-width:100%;max-height:120px;object-fit:contain;margin:0 0 16px}
+    .certification-status{display:inline-flex;align-items:center;border:1px solid #34718c;border-radius:999px;background:#102b41;padding:5px 10px;color:#9cecff;font:600 .7rem 'JetBrains Mono',monospace;letter-spacing:.04em;text-transform:uppercase;margin-bottom:12px}
+    .certification-issuer{margin:0 0 12px;color:var(--muted)}
+    .certification-details{display:grid;gap:9px;width:100%;margin:0 0 16px}
+    .certification-details div{display:grid;grid-template-columns:minmax(90px,auto) 1fr;gap:10px}
+    .certification-details dt{color:var(--muted);font-size:.84rem}
+    .certification-details dd{margin:0;overflow-wrap:anywhere}
+    .certification-details code{font-family:'JetBrains Mono',monospace;font-size:.8rem}
+    .certification-link{margin-top:auto}
     @media(max-width:980px){.featured-inner{grid-template-columns:1fr}.featured-content{order:0}.featured-art{order:1;min-height:270px}.architecture-flow{grid-template-columns:repeat(2,minmax(0,1fr))}}
     @media(max-width:570px){.architecture-flow{grid-template-columns:1fr;gap:10px}.architecture-step{padding:16px}}
   </style>
@@ -172,7 +183,34 @@
         {% endfor %}
       </div>
     </div></section>
-    <section id="certifications" class="section"><div class="container"><div class="section-header"><div class="eyebrow">05 / Certifications</div><h2>Certifications & <span class="gradient">Learning</span></h2><p>Verified certifications and credentials will appear here.</p></div><div class="panel cert-card"><h3>Certification details pending</h3><p>Once you provide completed certifications, we can add their official names, issuing organizations, credential links, and badges. No certification is claimed here yet.</p></div></div></section>
+    <section id="certifications" class="section"><div class="container"><div class="section-header"><div class="eyebrow">{{ site.data.certifications.eyebrow | escape }}</div><h2>{{ site.data.certifications.heading.before | escape }} <span class="gradient">{{ site.data.certifications.heading.highlight | escape }}</span></h2><p>{{ site.data.certifications.description | escape }}</p></div>
+      {% if site.data.certifications.certifications and site.data.certifications.certifications.size > 0 %}
+      <div class="grid three certification-grid">
+        {% for certification in site.data.certifications.certifications %}
+        <article class="panel cert-card certification-card">
+          {% if certification.badge and certification.badge != blank %}<img class="certification-badge" src="{{ certification.badge | escape }}" alt="{{ certification.name | escape }}" loading="lazy">{% endif %}
+          {% if certification.status and certification.status != blank %}<span class="certification-status">{{ certification.status | escape }}</span>{% endif %}
+          <h3>{{ certification.name | escape }}</h3>
+          {% if certification.issuer and certification.issuer != blank %}<p class="certification-issuer">{{ certification.issuer | escape }}</p>{% endif %}
+          {% assign certification_has_details = false %}
+          {% if certification.issue_date and certification.issue_date != blank %}{% assign certification_has_details = true %}{% endif %}
+          {% if certification.expiration_date and certification.expiration_date != blank %}{% assign certification_has_details = true %}{% endif %}
+          {% if certification.credential_id and certification.credential_id != blank %}{% assign certification_has_details = true %}{% endif %}
+          {% if certification_has_details %}
+          <dl class="certification-details">
+            {% if certification.issue_date and certification.issue_date != blank %}<div><dt>Issue date</dt><dd>{{ certification.issue_date | escape }}</dd></div>{% endif %}
+            {% if certification.expiration_date and certification.expiration_date != blank %}<div><dt>Expiration date</dt><dd>{{ certification.expiration_date | escape }}</dd></div>{% endif %}
+            {% if certification.credential_id and certification.credential_id != blank %}<div><dt>Credential ID</dt><dd><code>{{ certification.credential_id | escape }}</code></dd></div>{% endif %}
+          </dl>
+          {% endif %}
+          {% if certification.verification_url and certification.verification_url != blank %}<a class="btn btn-secondary btn-small certification-link" href="{{ certification.verification_url | escape }}" target="_blank" rel="noopener noreferrer">Verify credential</a>{% endif %}
+        </article>
+        {% endfor %}
+      </div>
+      {% else %}
+      <div class="panel cert-card"><h3>{{ site.data.certifications.empty_state.heading | escape }}</h3><p>{{ site.data.certifications.empty_state.description | escape }}</p></div>
+      {% endif %}
+    </div></section>
     <section id="contact" class="section"><div class="container"><div class="section-header"><div class="eyebrow">06 / Contact</div><h2>Let's <span class="gradient">Connect</span></h2><p>Interested in cloud infrastructure, DevOps, or infrastructure automation opportunities? Connect through the channels below once the profile links have been configured.</p></div><div class="grid three"><div class="panel contact-card inactive"><strong>✉ Email</strong><p>Add your professional email address.</p><span>Not configured yet</span></div><div class="panel contact-card inactive"><strong>in LinkedIn</strong><p>Add your public LinkedIn profile URL.</p><span>Not configured yet</span></div><div class="panel contact-card inactive"><strong>⌘ GitHub</strong><p>Add your GitHub profile URL.</p><span>Not configured yet</span></div></div></div></section>
   </main>
   <footer class="footer"><div class="container"><span>© <span id="year"></span> Sai Wai Yan. Built with HTML, CSS & JavaScript.</span><a href="#home">Back to top ↑</a></div></footer>

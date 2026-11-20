@@ -316,3 +316,84 @@ collections:
                     name: "note"
                     widget: "text"
                     required: false
+  - name: "certifications"
+    label: "Certifications"
+    files:
+      - name: "certifications"
+        label: "Certifications"
+        file: "_data/certifications.yml"
+        fields:
+          - label: "Section Label"
+            name: "eyebrow"
+            widget: "string"
+          - label: "Heading"
+            name: "heading"
+            widget: "object"
+            fields:
+              - label: "Before highlighted text"
+                name: "before"
+                widget: "string"
+              - label: "Highlighted text"
+                name: "highlight"
+                widget: "string"
+          - label: "Description"
+            name: "description"
+            widget: "text"
+          - label: "Empty State"
+            name: "empty_state"
+            widget: "object"
+            fields:
+              - label: "Heading"
+                name: "heading"
+                widget: "string"
+              - label: "Description"
+                name: "description"
+                widget: "text"
+          - label: "Certifications"
+            name: "certifications"
+            widget: "list"
+            required: false
+            allow_add: true
+            allow_remove: true
+            allow_reorder: true
+            summary: "{{fields.name}}"
+            fields:
+              - label: "Certification Name"
+                name: "name"
+                widget: "string"
+              - label: "Issuing Organization"
+                name: "issuer"
+                widget: "string"
+              - label: "Issue Date"
+                name: "issue_date"
+                widget: "string"
+                required: false
+              - label: "Expiration Date"
+                name: "expiration_date"
+                widget: "string"
+                required: false
+              - label: "Credential ID"
+                name: "credential_id"
+                widget: "string"
+                required: false
+              - label: "Verification URL"
+                name: "verification_url"
+                widget: "string"
+                required: false
+              - label: "Certification Badge / Image"
+                name: "badge"
+                widget: "image"
+                required: false
+              - label: "Status"
+                name: "status"
+                widget: "select"
+                required: true
+                options:
+                  - label: "Select status"
+                    value: ""
+                  - label: "Earned"
+                    value: "Earned"
+                  - label: "In Progress"
+                    value: "In Progress"
+                  - label: "Planned"
+                    value: "Planned"

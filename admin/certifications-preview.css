@@ -1,0 +1,179 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #0B1425;
+  color: #EEF5FF;
+}
+
+.certifications-preview {
+  width: min(100%, 1120px);
+  margin: 0 auto;
+  padding: clamp(18px, 4vw, 44px);
+}
+
+.certifications-preview__header {
+  margin-bottom: 22px;
+  border: 1px solid #29405E;
+  border-radius: 20px;
+  background:
+    radial-gradient(ellipse at 100% 0, rgb(37 99 235 / 20%), transparent 58%),
+    linear-gradient(145deg, #132743, #0E1B30);
+  padding: clamp(22px, 4vw, 36px);
+}
+
+.certifications-preview__eyebrow {
+  margin: 0 0 10px;
+  color: #22D3EE;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.certifications-preview__header h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  letter-spacing: -0.04em;
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+}
+
+.certifications-preview__accent {
+  color: #22D3EE;
+}
+
+.certifications-preview__description {
+  max-width: 70ch;
+  margin: 14px 0 0;
+  color: #B7C7DE;
+  line-height: 1.7;
+}
+
+.certifications-preview__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: 16px;
+}
+
+.certifications-preview__card,
+.certifications-preview__empty {
+  min-width: 0;
+  border: 1px solid #29405E;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #111F35, #0E1B30);
+  box-shadow: 0 16px 40px rgb(0 0 0 / 20%);
+  padding: clamp(20px, 3vw, 28px);
+}
+
+.certifications-preview__badge {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: 120px;
+  margin: 0 0 16px;
+  object-fit: contain;
+}
+
+.certifications-preview__status {
+  display: inline-flex;
+  margin-bottom: 12px;
+  border: 1px solid #34718C;
+  border-radius: 999px;
+  background: #102B41;
+  padding: 5px 10px;
+  color: #9cecff;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.certifications-preview__card h2,
+.certifications-preview__empty h2 {
+  margin: 0 0 9px;
+  font-size: clamp(1.15rem, 3vw, 1.45rem);
+  letter-spacing: -0.02em;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.certifications-preview__issuer,
+.certifications-preview__empty p {
+  margin: 0;
+  color: #B7C7DE;
+  line-height: 1.7;
+}
+
+.certifications-preview__details {
+  display: grid;
+  gap: 9px;
+  margin: 16px 0;
+}
+
+.certifications-preview__details div {
+  display: grid;
+  grid-template-columns: minmax(90px, auto) 1fr;
+  gap: 10px;
+}
+
+.certifications-preview__details dt {
+  color: #B7C7DE;
+  font-size: 0.85rem;
+}
+
+.certifications-preview__details dd {
+  min-width: 0;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.certifications-preview__link {
+  display: inline-flex;
+  border: 1px solid #385276;
+  border-radius: 9px;
+  background: #142641;
+  padding: 8px 12px;
+  color: #E9F4FF;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.certifications-preview__link:hover {
+  border-color: #22D3EE;
+}
+
+.certifications-preview__link:focus-visible {
+  outline: 3px solid #22D3EE;
+  outline-offset: 3px;
+}
+
+.certifications-preview__empty p {
+  margin-top: 6px;
+}
+
+@media (max-width: 520px) {
+  .certifications-preview {
+    padding: 14px;
+  }
+
+  .certifications-preview__header {
+    border-radius: 16px;
+    padding: 20px;
+  }
+
+  .certifications-preview__grid {
+    grid-template-columns: 1fr;
+  }
+}
