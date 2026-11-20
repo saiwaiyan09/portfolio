@@ -194,3 +194,125 @@ collections:
                   label: "Technology"
                   name: "technology"
                   widget: "string"
+  - name: "projects"
+    label: "Projects"
+    files:
+      - name: "projects"
+        label: "Projects"
+        file: "_data/projects.yml"
+        fields:
+          - label: "Section Label"
+            name: "eyebrow"
+            widget: "string"
+          - label: "Heading"
+            name: "heading"
+            widget: "object"
+            fields:
+              - label: "Before highlighted text"
+                name: "before"
+                widget: "string"
+              - label: "Highlighted text"
+                name: "highlight"
+                widget: "string"
+          - label: "Description"
+            name: "description"
+            widget: "text"
+          - label: "Projects"
+            name: "projects"
+            widget: "list"
+            allow_add: true
+            allow_remove: true
+            allow_reorder: true
+            summary: "{{fields.name}}"
+            fields:
+              - label: "Project Name"
+                name: "name"
+                widget: "string"
+              - label: "Category"
+                name: "category"
+                widget: "string"
+                required: false
+              - label: "Description"
+                name: "description"
+                widget: "text"
+              - label: "Technologies"
+                name: "technologies"
+                widget: "list"
+                required: false
+                allow_add: true
+                allow_remove: true
+                allow_reorder: true
+                field:
+                  label: "Technology"
+                  name: "technology"
+                  widget: "string"
+              - label: "Tags"
+                name: "tags"
+                widget: "list"
+                required: false
+                allow_add: true
+                allow_remove: true
+                allow_reorder: true
+                field:
+                  label: "Tag"
+                  name: "tag"
+                  widget: "string"
+              - label: "Project Image"
+                name: "image"
+                widget: "image"
+                required: false
+              - label: "GitHub Repository URL"
+                name: "github_url"
+                widget: "string"
+                required: false
+              - label: "Live Demo URL"
+                name: "live_demo_url"
+                widget: "string"
+                required: false
+              - label: "Project Status"
+                name: "status"
+                widget: "select"
+                required: false
+                options:
+                  - label: "Planned"
+                    value: "Planned"
+                  - label: "In Progress"
+                    value: "In Progress"
+                  - label: "Completed"
+                    value: "Completed"
+              - label: "Architecture Details"
+                name: "architecture"
+                widget: "object"
+                required: false
+                fields:
+                  - label: "Section Label"
+                    name: "eyebrow"
+                    widget: "string"
+                    required: false
+                  - label: "Details Anchor"
+                    name: "anchor"
+                    widget: "string"
+                    required: false
+                  - label: "Heading"
+                    name: "heading"
+                    widget: "string"
+                    required: false
+                  - label: "Delivery Steps"
+                    name: "steps"
+                    widget: "list"
+                    required: false
+                    allow_add: true
+                    allow_remove: true
+                    allow_reorder: true
+                    summary: "{{fields.title}}"
+                    fields:
+                      - label: "Step Name"
+                        name: "title"
+                        widget: "string"
+                      - label: "Description"
+                        name: "description"
+                        widget: "text"
+                  - label: "Note"
+                    name: "note"
+                    widget: "text"
+                    required: false
