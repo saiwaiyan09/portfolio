@@ -66,3 +66,50 @@ collections:
               - label: "Note"
                 name: "note"
                 widget: "text"
+  - name: "skills"
+    label: "Skills"
+    files:
+      - name: "skills"
+        label: "Technical Skills"
+        file: "_data/skills.yml"
+        fields:
+          - label: "Section Label"
+            name: "eyebrow"
+            widget: "string"
+          - label: "Heading"
+            name: "heading"
+            widget: "object"
+            fields:
+              - label: "Before highlighted text"
+                name: "before"
+                widget: "string"
+              - label: "Highlighted text"
+                name: "highlight"
+                widget: "string"
+          - label: "Description"
+            name: "description"
+            widget: "text"
+          - label: "Categories"
+            name: "categories"
+            widget: "list"
+            allow_add: true
+            allow_remove: true
+            allow_reorder: true
+            summary: "{{fields.name}}"
+            fields:
+              - label: "Category Name"
+                name: "name"
+                widget: "string"
+              - label: "Icon"
+                name: "icon"
+                widget: "string"
+              - label: "Skills"
+                name: "skills"
+                widget: "list"
+                allow_add: true
+                allow_remove: true
+                allow_reorder: true
+                field:
+                  label: "Skill"
+                  name: "skill"
+                  widget: "string"

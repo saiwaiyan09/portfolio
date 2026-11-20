@@ -1,0 +1,42 @@
+eyebrow: "02 / Technical Skills"
+heading:
+  before: "Technologies &"
+  highlight: "Engineering Tools"
+description: "Technologies from my infrastructure background and current Cloud/DevOps learning and project work."
+categories:
+  - name: "Cloud Infrastructure"
+    icon: "☁"
+    skills:
+      - "Amazon Web Services (AWS)"
+      - "VPC, EC2, IAM, S3"
+      - "Cloud networking concepts"
+  - name: "Infrastructure as Code"
+    icon: "◇"
+    skills:
+      - "Terraform"
+      - "Reusable modules"
+      - "Remote state & validation"
+  - name: "Containers & Kubernetes"
+    icon: "⬡"
+    skills:
+      - "Docker"
+      - "Kubernetes / EKS"
+      - "Helm"
+  - name: "CI/CD & Automation"
+    icon: "↗"
+    skills:
+      - "Git & GitHub"
+      - "GitHub Actions"
+      - "Deployment workflows"
+  - name: "Systems & Networking"
+    icon: "⌘"
+    skills:
+      - "Linux"
+      - "TCP/IP, routing, DNS"
+      - "SSH & troubleshooting"
+  - name: "Security & Observability"
+    icon: "♢"
+    skills:
+      - "HCP Boundary / Vault"
+      - "CloudWatch"
+      - "Prometheus / Grafana concepts"

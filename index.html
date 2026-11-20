@@ -82,14 +82,11 @@
         </div>
       </div>
     </section>
-    <section id="skills" class="section"><div class="container"><div class="section-header"><div class="eyebrow">02 / Technical Skills</div><h2>Technologies & <span class="gradient">Engineering Tools</span></h2><p>Technologies from my infrastructure background and current Cloud/DevOps learning and project work.</p></div>
+    <section id="skills" class="section"><div class="container"><div class="section-header"><div class="eyebrow">{{ site.data.skills.eyebrow | escape }}</div><h2>{{ site.data.skills.heading.before | escape }} <span class="gradient">{{ site.data.skills.heading.highlight | escape }}</span></h2><p>{{ site.data.skills.description | escape }}</p></div>
       <div class="grid three">
-        <article class="panel skill-card"><div class="skill-icon">☁</div><h3>Cloud Infrastructure</h3><ul><li>Amazon Web Services (AWS)</li><li>VPC, EC2, IAM, S3</li><li>Cloud networking concepts</li></ul></article>
-        <article class="panel skill-card"><div class="skill-icon">◇</div><h3>Infrastructure as Code</h3><ul><li>Terraform</li><li>Reusable modules</li><li>Remote state & validation</li></ul></article>
-        <article class="panel skill-card"><div class="skill-icon">⬡</div><h3>Containers & Kubernetes</h3><ul><li>Docker</li><li>Kubernetes / EKS</li><li>Helm</li></ul></article>
-        <article class="panel skill-card"><div class="skill-icon">↗</div><h3>CI/CD & Automation</h3><ul><li>Git & GitHub</li><li>GitHub Actions</li><li>Deployment workflows</li></ul></article>
-        <article class="panel skill-card"><div class="skill-icon">⌘</div><h3>Systems & Networking</h3><ul><li>Linux</li><li>TCP/IP, routing, DNS</li><li>SSH & troubleshooting</li></ul></article>
-        <article class="panel skill-card"><div class="skill-icon">♢</div><h3>Security & Observability</h3><ul><li>HCP Boundary / Vault</li><li>CloudWatch</li><li>Prometheus / Grafana concepts</li></ul></article>
+        {% for category in site.data.skills.categories %}
+        <article class="panel skill-card"><div class="skill-icon">{{ category.icon | escape }}</div><h3>{{ category.name | escape }}</h3><ul>{% for skill in category.skills %}<li>{{ skill | escape }}</li>{% endfor %}</ul></article>
+        {% endfor %}
       </div>
     </div></section>
     <section id="experience" class="section"><div class="container"><div class="section-header"><div class="eyebrow">03 / Experience</div><h2>Professional <span class="gradient">Experience</span></h2><p>A foundation in IT infrastructure and networking, with a focus on cloud and automation.</p></div>
