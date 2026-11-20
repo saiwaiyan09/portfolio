@@ -1,0 +1,22 @@
+name: "Sai Wai Yan"
+headline:
+  before: "Cloud Infrastructure"
+  highlight: "& DevOps"
+  after: "Engineer"
+summary: "IT infrastructure and networking professional with 5+ years of experience, focused on building reliable cloud infrastructure and growing expertise in AWS, Terraform, Kubernetes, and CI/CD automation."
+about:
+  heading:
+    before: "Infrastructure foundations."
+    highlight: "Cloud-first mindset."
+  paragraphs:
+    - "I'm Sai Wai Yan, an IT infrastructure and networking professional with more than five years of experience. My technical interests include cloud infrastructure, infrastructure as code, secure connectivity, container orchestration, and delivery automation."
+    - "This portfolio documents my skills and engineering projects, including architecture decisions, implementation steps, and evidence gathered through hands-on testing."
+    - "I'm especially interested in roles spanning cloud infrastructure, AWS engineering, infrastructure automation, and DevOps."
+  stats:
+    - value: "5+"
+      label: "Years in IT infrastructure & networking"
+    - value: "AWS"
+      label: "Cloud platform focus"
+    - value: "IaC"
+      label: "Terraform & automation focus"
+  note: "Experience details, project outcomes, and certifications will be added only when verified."

@@ -1,3 +1,5 @@
+---
+---
 <!doctype html>
 <html lang="en">
 <head>
@@ -50,9 +52,9 @@
     <section id="home" class="hero">
       <div class="container hero-grid">
         <div>
-          <div class="eyebrow">Hello, I'm Sai Wai Yan</div>
-          <h1>Cloud Infrastructure <span class="gradient">& DevOps</span> Engineer</h1>
-          <p class="lead">IT infrastructure and networking professional with 5+ years of experience, focused on building reliable cloud infrastructure and growing expertise in AWS, Terraform, Kubernetes, and CI/CD automation.</p>
+          <div class="eyebrow">Hello, I'm {{ site.data.profile.name | escape }}</div>
+          <h1>{{ site.data.profile.headline.before | escape }} <span class="gradient">{{ site.data.profile.headline.highlight | escape }}</span> {{ site.data.profile.headline.after | escape }}</h1>
+          <p class="lead">{{ site.data.profile.summary | escape }}</p>
           <div class="hero-actions"><a class="btn btn-primary" href="#projects">Explore Projects ↗</a><a class="btn btn-secondary" href="#contact">Contact Me</a></div>
           <p class="hero-note mono">AWS / Linux / Networking / Terraform / Kubernetes / CI/CD</p>
         </div>
@@ -74,9 +76,9 @@
       </div>
     </section>
     <section id="about" class="section">
-      <div class="container"><div class="section-header"><div class="eyebrow">01 / About</div><h2>Infrastructure foundations. <span class="gradient">Cloud-first mindset.</span></h2></div>
-        <div class="grid two"><div class="panel about-text"><p>I'm Sai Wai Yan, an IT infrastructure and networking professional with more than five years of experience. My technical interests include cloud infrastructure, infrastructure as code, secure connectivity, container orchestration, and delivery automation.</p><p>This portfolio documents my skills and engineering projects, including architecture decisions, implementation steps, and evidence gathered through hands-on testing.</p><p>I'm especially interested in roles spanning cloud infrastructure, AWS engineering, infrastructure automation, and DevOps.</p></div>
-          <div><div class="stats"><div class="panel stat"><strong>5+</strong><span>Years in IT infrastructure & networking</span></div><div class="panel stat"><strong>AWS</strong><span>Cloud platform focus</span></div><div class="panel stat"><strong>IaC</strong><span>Terraform & automation focus</span></div></div><p class="notice" style="margin-top:18px">Experience details, project outcomes, and certifications will be added only when verified.</p></div>
+      <div class="container"><div class="section-header"><div class="eyebrow">01 / About</div><h2>{{ site.data.profile.about.heading.before | escape }} <span class="gradient">{{ site.data.profile.about.heading.highlight | escape }}</span></h2></div>
+        <div class="grid two"><div class="panel about-text">{% for paragraph in site.data.profile.about.paragraphs %}<p>{{ paragraph | escape }}</p>{% endfor %}</div>
+          <div><div class="stats">{% for stat in site.data.profile.about.stats %}<div class="panel stat"><strong>{{ stat.value | escape }}</strong><span>{{ stat.label | escape }}</span></div>{% endfor %}</div><p class="notice" style="margin-top:18px">{{ site.data.profile.about.note | escape }}</p></div>
         </div>
       </div>
     </section>
