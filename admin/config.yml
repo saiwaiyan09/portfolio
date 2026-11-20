@@ -1,7 +1,6 @@
 backend:
-  name: github
-  repo: saiwaiyan09/portfolio
-  branch: feature/decap-cms
+  name: turbo-github
+  turbo_site_id: 8f035ee2-72d8-485a-91b2-b09abc831d51
 
 media_folder: "assets/uploads"
 public_folder: "/portfolio/assets/uploads"
