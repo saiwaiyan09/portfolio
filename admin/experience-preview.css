@@ -1,0 +1,165 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #0B1425;
+  color: #EEF5FF;
+}
+
+.experience-preview {
+  width: min(100%, 1120px);
+  margin: 0 auto;
+  padding: clamp(18px, 4vw, 44px);
+}
+
+.experience-preview__header {
+  margin-bottom: 24px;
+  border: 1px solid #29405E;
+  border-radius: 20px;
+  background:
+    radial-gradient(ellipse at 100% 0, rgb(37 99 235 / 20%), transparent 58%),
+    linear-gradient(145deg, #132743, #0E1B30);
+  padding: clamp(22px, 4vw, 36px);
+}
+
+.experience-preview__eyebrow,
+.experience-preview__item-label {
+  margin: 0 0 10px;
+  color: #22D3EE;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.experience-preview__header h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  letter-spacing: -0.04em;
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+}
+
+.experience-preview__accent {
+  color: #22D3EE;
+}
+
+.experience-preview__description {
+  max-width: 70ch;
+  margin: 14px 0 0;
+  color: #B7C7DE;
+  line-height: 1.7;
+}
+
+.experience-preview__timeline {
+  display: grid;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.experience-preview__item {
+  min-width: 0;
+  border-left: 2px solid #244668;
+  padding-left: 18px;
+}
+
+.experience-preview__card {
+  min-width: 0;
+  border: 1px solid #29405E;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #111F35, #0E1B30);
+  box-shadow: 0 16px 40px rgb(0 0 0 / 20%);
+  padding: clamp(20px, 3vw, 28px);
+}
+
+.experience-preview__item-label {
+  margin-bottom: 8px;
+}
+
+.experience-preview__card h2 {
+  margin: 0;
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
+  letter-spacing: -0.02em;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.experience-preview__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  margin: 12px 0 0;
+  color: #22D3EE;
+  font-size: 0.88rem;
+}
+
+.experience-preview__prose,
+.experience-preview__highlights {
+  color: #B7C7DE;
+  line-height: 1.7;
+}
+
+.experience-preview__prose {
+  margin: 12px 0 0;
+  overflow-wrap: anywhere;
+}
+
+.experience-preview__highlights {
+  display: grid;
+  gap: 7px;
+  margin: 12px 0 0;
+  padding-left: 1.25rem;
+}
+
+.experience-preview__technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.experience-preview__technologies li {
+  border: 1px solid #28567A;
+  border-radius: 7px;
+  background: #163753;
+  padding: 5px 9px;
+  color: #9cecff;
+  font-size: 0.75rem;
+  overflow-wrap: anywhere;
+}
+
+.experience-preview__empty {
+  border: 1px dashed #385276;
+  border-radius: 12px;
+  padding: 20px;
+  color: #B7C7DE;
+  text-align: center;
+}
+
+@media (max-width: 520px) {
+  .experience-preview {
+    padding: 14px;
+  }
+
+  .experience-preview__header {
+    border-radius: 16px;
+    padding: 20px;
+  }
+
+  .experience-preview__item {
+    padding-left: 12px;
+  }
+}

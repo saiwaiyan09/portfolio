@@ -113,3 +113,84 @@ collections:
                   label: "Skill"
                   name: "skill"
                   widget: "string"
+  - name: "experience"
+    label: "Experience"
+    files:
+      - name: "experience"
+        label: "Professional Experience"
+        file: "_data/experience.yml"
+        fields:
+          - label: "Section Label"
+            name: "eyebrow"
+            widget: "string"
+          - label: "Heading"
+            name: "heading"
+            widget: "object"
+            fields:
+              - label: "Before highlighted text"
+                name: "before"
+                widget: "string"
+              - label: "Highlighted text"
+                name: "highlight"
+                widget: "string"
+          - label: "Description"
+            name: "description"
+            widget: "text"
+          - label: "Entries"
+            name: "entries"
+            widget: "list"
+            required: false
+            allow_add: true
+            allow_remove: true
+            allow_reorder: true
+            summary: "{{fields.title}}"
+            fields:
+              - label: "Entry Label"
+                name: "eyebrow"
+                widget: "string"
+                required: false
+              - label: "Entry Heading"
+                name: "title"
+                widget: "string"
+              - label: "Job Title"
+                name: "job_title"
+                widget: "string"
+                required: false
+              - label: "Company"
+                name: "company"
+                widget: "string"
+                required: false
+              - label: "Employment Dates"
+                name: "employment_dates"
+                widget: "string"
+                required: false
+              - label: "Location"
+                name: "location"
+                widget: "string"
+                required: false
+              - label: "Description"
+                name: "description"
+                widget: "text"
+                required: false
+              - label: "Responsibilities and Achievements"
+                name: "responsibilities"
+                widget: "list"
+                required: false
+                allow_add: true
+                allow_remove: true
+                allow_reorder: true
+                field:
+                  label: "Responsibility or Achievement"
+                  name: "responsibility"
+                  widget: "text"
+              - label: "Technologies"
+                name: "technologies"
+                widget: "list"
+                required: false
+                allow_add: true
+                allow_remove: true
+                allow_reorder: true
+                field:
+                  label: "Technology"
+                  name: "technology"
+                  widget: "string"

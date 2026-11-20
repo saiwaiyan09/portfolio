@@ -1,0 +1,12 @@
+eyebrow: "03 / Experience"
+heading:
+  before: "Professional"
+  highlight: "Experience"
+description: "A foundation in IT infrastructure and networking, with a focus on cloud and automation."
+entries:
+  - eyebrow: "Professional background"
+    title: "IT Infrastructure & Networking"
+    description: "5+ years of professional experience in IT infrastructure and networking. Add verified employers, job titles, dates, responsibilities, and accomplishments here before sharing a detailed career timeline."
+  - eyebrow: "Current technical focus"
+    title: "Cloud & DevOps Engineering"
+    description: "Developing and documenting hands-on work with AWS, Terraform, Kubernetes, GitHub Actions, and secure infrastructure patterns. This entry describes technical focus, not a separate employment position."

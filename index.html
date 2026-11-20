@@ -34,6 +34,9 @@
     .architecture-step:before{content:"0" counter(architecture-step);display:block;margin-bottom:12px;color:var(--cyan);font:600 .75rem 'JetBrains Mono',monospace;letter-spacing:.08em}
     .architecture-step h4{margin:0 0 7px;font-size:1rem;line-height:1.35}
     .architecture-step p{margin:0;color:var(--muted);font-size:.86rem;line-height:1.6}
+    .timeline-item .experience-meta{display:flex;flex-wrap:wrap;gap:5px 12px;margin:0 0 12px;color:var(--cyan);font-size:.88rem}
+    .experience-highlights{margin:12px 0 0;padding-left:1.25rem;color:var(--muted)}
+    .experience-highlights li+li{margin-top:5px}
     @media(max-width:980px){.featured-inner{grid-template-columns:1fr}.featured-content{order:0}.featured-art{order:1;min-height:270px}.architecture-flow{grid-template-columns:repeat(2,minmax(0,1fr))}}
     @media(max-width:570px){.architecture-flow{grid-template-columns:1fr;gap:10px}.architecture-step{padding:16px}}
   </style>
@@ -89,8 +92,21 @@
         {% endfor %}
       </div>
     </div></section>
-    <section id="experience" class="section"><div class="container"><div class="section-header"><div class="eyebrow">03 / Experience</div><h2>Professional <span class="gradient">Experience</span></h2><p>A foundation in IT infrastructure and networking, with a focus on cloud and automation.</p></div>
-      <div class="timeline"><div class="timeline-item"><div class="panel"><div class="eyebrow">Professional background</div><h3>IT Infrastructure & Networking</h3><p>5+ years of professional experience in IT infrastructure and networking. Add verified employers, job titles, dates, responsibilities, and accomplishments here before sharing a detailed career timeline.</p></div></div><div class="timeline-item"><div class="panel"><div class="eyebrow">Current technical focus</div><h3>Cloud & DevOps Engineering</h3><p>Developing and documenting hands-on work with AWS, Terraform, Kubernetes, GitHub Actions, and secure infrastructure patterns. This entry describes technical focus, not a separate employment position.</p></div></div></div>
+    <section id="experience" class="section"><div class="container"><div class="section-header"><div class="eyebrow">{{ site.data.experience.eyebrow | escape }}</div><h2>{{ site.data.experience.heading.before | escape }} <span class="gradient">{{ site.data.experience.heading.highlight | escape }}</span></h2><p>{{ site.data.experience.description | escape }}</p></div>
+      <div class="timeline">
+        {% for item in site.data.experience.entries %}
+        <div class="timeline-item"><article class="panel">
+          {% if item.eyebrow != blank %}<div class="eyebrow">{{ item.eyebrow | escape }}</div>{% endif %}
+          <h3>{{ item.title | escape }}</h3>
+          {% if item.job_title != blank or item.company != blank or item.employment_dates != blank or item.location != blank %}
+          <p class="experience-meta">{% if item.job_title != blank %}<span>{{ item.job_title | escape }}</span>{% endif %}{% if item.company != blank %}<span>{{ item.company | escape }}</span>{% endif %}{% if item.employment_dates != blank %}<span>{{ item.employment_dates | escape }}</span>{% endif %}{% if item.location != blank %}<span>{{ item.location | escape }}</span>{% endif %}</p>
+          {% endif %}
+          {% if item.description != blank %}<p>{{ item.description | escape }}</p>{% endif %}
+          {% if item.responsibilities != blank and item.responsibilities.size > 0 %}<ul class="experience-highlights">{% for responsibility in item.responsibilities %}<li>{{ responsibility | escape }}</li>{% endfor %}</ul>{% endif %}
+          {% if item.technologies != blank and item.technologies.size > 0 %}<div class="tag-row" aria-label="Technologies">{% for technology in item.technologies %}<span class="tag">{{ technology | escape }}</span>{% endfor %}</div>{% endif %}
+        </article></div>
+        {% endfor %}
+      </div>
     </div></section>
     <section id="projects" class="section"><div class="container"><div class="section-header"><div class="eyebrow">04 / Projects</div><h2>Featured <span class="gradient">Engineering Work</span></h2><p>Architecture-focused project documentation. The featured EKS architecture below is a planned implementation, not a verified deployment.</p></div>
       <article class="panel featured">
