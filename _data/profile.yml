@@ -3,12 +3,10 @@ headline:
   before: Cloud Infrastructure
   highlight: "& DevOps"
   after: Engineer
-summary: >-
+summary: >
   IT infrastructure and networking professional with 5+ years of experience,
   focused on building reliable cloud infrastructure and growing expertise in
   AWS, Terraform, Kubernetes, and CI/CD automation.
-
-  Testing Decap CMS content editing.
 about:
   heading:
     before: Infrastructure foundations.
