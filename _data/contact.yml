@@ -8,16 +8,16 @@ description: Interested in cloud infrastructure, DevOps, or infrastructure
 channels:
   email:
     label: ✉ Email
-    prompt: saisaiwaiyan.2409@gmail.com
-    address: ""
+    prompt: Add your professional email address.
+    address: saisaiwaiyan.2409@gmail.com
   linkedin:
     label: in LinkedIn
-    prompt: linkedin.com/in/saiwaiyan09/
-    url: ""
+    prompt: Add your LinkedIn profile URL.
+    url: "https://www.linkedin.com/in/saiwaiyan09/"
   github:
     label: ⌘ GitHub
-    prompt: github.com/saiwaiyan09
-    url: ""
+    prompt: Add your GitHub profile URL.
+    url: "https://github.com/saiwaiyan09"
 unconfigured_label: Not configured yet
 location: ""
 availability: ""
