@@ -54,6 +54,9 @@
     .certification-details dd{margin:0;overflow-wrap:anywhere}
     .certification-details code{font-family:'JetBrains Mono',monospace;font-size:.8rem}
     .certification-link{margin-top:auto}
+    .contact-extra{display:grid;gap:12px;margin-top:20px}
+    .contact-extra p{margin:0}
+    .contact-extra .notice{margin:0}
     @media(max-width:980px){.featured-inner{grid-template-columns:1fr}.featured-content{order:0}.featured-art{order:1;min-height:270px}.architecture-flow{grid-template-columns:repeat(2,minmax(0,1fr))}}
     @media(max-width:570px){.architecture-flow{grid-template-columns:1fr;gap:10px}.architecture-step{padding:16px}}
   </style>
@@ -211,7 +214,35 @@
       <div class="panel cert-card"><h3>{{ site.data.certifications.empty_state.heading | escape }}</h3><p>{{ site.data.certifications.empty_state.description | escape }}</p></div>
       {% endif %}
     </div></section>
-    <section id="contact" class="section"><div class="container"><div class="section-header"><div class="eyebrow">06 / Contact</div><h2>Let's <span class="gradient">Connect</span></h2><p>Interested in cloud infrastructure, DevOps, or infrastructure automation opportunities? Connect through the channels below once the profile links have been configured.</p></div><div class="grid three"><div class="panel contact-card inactive"><strong>✉ Email</strong><p>Add your professional email address.</p><span>Not configured yet</span></div><div class="panel contact-card inactive"><strong>in LinkedIn</strong><p>Add your public LinkedIn profile URL.</p><span>Not configured yet</span></div><div class="panel contact-card inactive"><strong>⌘ GitHub</strong><p>Add your GitHub profile URL.</p><span>Not configured yet</span></div></div></div></section>
+    <section id="contact" class="section"><div class="container"><div class="section-header"><div class="eyebrow">{{ site.data.contact.eyebrow | escape }}</div><h2>{{ site.data.contact.heading.before | escape }} <span class="gradient">{{ site.data.contact.heading.highlight | escape }}</span></h2><p>{{ site.data.contact.description | escape }}</p></div>
+      <div class="grid three">
+        {% assign email = site.data.contact.channels.email %}
+        {% if email.address and email.address != "" %}
+        <a class="panel contact-card" href="mailto:{{ email.address | escape }}"><strong>{{ email.label | escape }}</strong><p>{{ email.address | escape }}</p></a>
+        {% else %}
+        <div class="panel contact-card inactive"><strong>{{ email.label | escape }}</strong><p>{{ email.prompt | escape }}</p><span>{{ site.data.contact.unconfigured_label | escape }}</span></div>
+        {% endif %}
+        {% assign linkedin = site.data.contact.channels.linkedin %}
+        {% if linkedin.url and linkedin.url != "" %}
+        <a class="panel contact-card" href="{{ linkedin.url | escape }}" target="_blank" rel="noopener noreferrer"><strong>{{ linkedin.label | escape }}</strong><p>{{ linkedin.url | escape }}</p></a>
+        {% else %}
+        <div class="panel contact-card inactive"><strong>{{ linkedin.label | escape }}</strong><p>{{ linkedin.prompt | escape }}</p><span>{{ site.data.contact.unconfigured_label | escape }}</span></div>
+        {% endif %}
+        {% assign github = site.data.contact.channels.github %}
+        {% if github.url and github.url != "" %}
+        <a class="panel contact-card" href="{{ github.url | escape }}" target="_blank" rel="noopener noreferrer"><strong>{{ github.label | escape }}</strong><p>{{ github.url | escape }}</p></a>
+        {% else %}
+        <div class="panel contact-card inactive"><strong>{{ github.label | escape }}</strong><p>{{ github.prompt | escape }}</p><span>{{ site.data.contact.unconfigured_label | escape }}</span></div>
+        {% endif %}
+        {% for social in site.data.contact.social_links %}
+        {% if social.label and social.label != "" and social.url and social.url != "" %}<a class="panel contact-card" href="{{ social.url | escape }}" target="_blank" rel="noopener noreferrer"><strong>{{ social.label | escape }}</strong><p>{{ social.url | escape }}</p></a>{% endif %}
+        {% endfor %}
+      </div>
+      {% assign has_contact_extra = false %}
+      {% if site.data.contact.location and site.data.contact.location != "" %}{% assign has_contact_extra = true %}{% endif %}
+      {% if site.data.contact.availability and site.data.contact.availability != "" %}{% assign has_contact_extra = true %}{% endif %}
+      {% if has_contact_extra %}<div class="contact-extra">{% if site.data.contact.location and site.data.contact.location != "" %}<p><strong>Location:</strong> {{ site.data.contact.location | escape }}</p>{% endif %}{% if site.data.contact.availability and site.data.contact.availability != "" %}<p class="notice">{{ site.data.contact.availability | escape }}</p>{% endif %}</div>{% endif %}
+    </div></section>
   </main>
   <footer class="footer"><div class="container"><span>© <span id="year"></span> Sai Wai Yan. Built with HTML, CSS & JavaScript.</span><a href="#home">Back to top ↑</a></div></footer>
   <script>

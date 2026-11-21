@@ -397,3 +397,110 @@ collections:
                     value: "In Progress"
                   - label: "Planned"
                     value: "Planned"
+  - name: "contact"
+    label: "Contact"
+    files:
+      - name: "contact"
+        label: "Contact Information"
+        file: "_data/contact.yml"
+        fields:
+          - label: "Section Label"
+            name: "eyebrow"
+            widget: "string"
+          - label: "Heading"
+            name: "heading"
+            widget: "object"
+            fields:
+              - label: "Before highlighted text"
+                name: "before"
+                widget: "string"
+              - label: "Highlighted text"
+                name: "highlight"
+                widget: "string"
+          - label: "Description"
+            name: "description"
+            widget: "text"
+          - label: "Contact Channels"
+            name: "channels"
+            widget: "object"
+            fields:
+              - label: "Email"
+                name: "email"
+                widget: "object"
+                fields:
+                  - label: "Card Label"
+                    name: "label"
+                    widget: "string"
+                  - label: "Prompt"
+                    name: "prompt"
+                    widget: "text"
+                  - label: "Email Address"
+                    name: "address"
+                    widget: "string"
+                    required: false
+                    pattern:
+                      - '^[^\s@]+@[^\s@]+\.[^\s@]+$'
+                      - "Enter a valid email address."
+              - label: "LinkedIn"
+                name: "linkedin"
+                widget: "object"
+                fields:
+                  - label: "Card Label"
+                    name: "label"
+                    widget: "string"
+                  - label: "Prompt"
+                    name: "prompt"
+                    widget: "text"
+                  - label: "LinkedIn URL"
+                    name: "url"
+                    widget: "string"
+                    required: false
+                    pattern:
+                      - '^https?://[^/\s?#]+(?:[/?#][^\s]*)?$'
+                      - "Enter a valid http(s) URL."
+              - label: "GitHub"
+                name: "github"
+                widget: "object"
+                fields:
+                  - label: "Card Label"
+                    name: "label"
+                    widget: "string"
+                  - label: "Prompt"
+                    name: "prompt"
+                    widget: "text"
+                  - label: "GitHub URL"
+                    name: "url"
+                    widget: "string"
+                    required: false
+                    pattern:
+                      - '^https?://[^/\s?#]+(?:[/?#][^\s]*)?$'
+                      - "Enter a valid http(s) URL."
+          - label: "Not Configured Label"
+            name: "unconfigured_label"
+            widget: "string"
+          - label: "Location"
+            name: "location"
+            widget: "string"
+            required: false
+          - label: "Availability Message"
+            name: "availability"
+            widget: "text"
+            required: false
+          - label: "Additional Social Links"
+            name: "social_links"
+            widget: "list"
+            required: false
+            allow_add: true
+            allow_remove: true
+            allow_reorder: true
+            summary: "{{fields.label}}"
+            fields:
+              - label: "Link Label"
+                name: "label"
+                widget: "string"
+              - label: "URL"
+                name: "url"
+                widget: "string"
+                pattern:
+                  - '^https?://[^/\s?#]+(?:[/?#][^\s]*)?$'
+                  - "Enter a valid http(s) URL."

@@ -1,0 +1,22 @@
+eyebrow: "06 / Contact"
+heading:
+  before: "Let's"
+  highlight: "Connect"
+description: "Interested in cloud infrastructure, DevOps, or infrastructure automation opportunities? Connect through the channels below once the profile links have been configured."
+channels:
+  email:
+    label: "✉ Email"
+    prompt: "Add your professional email address."
+    address: ""
+  linkedin:
+    label: "in LinkedIn"
+    prompt: "Add your public LinkedIn profile URL."
+    url: ""
+  github:
+    label: "⌘ GitHub"
+    prompt: "Add your GitHub profile URL."
+    url: ""
+unconfigured_label: "Not configured yet"
+location: ""
+availability: ""
+social_links: []
