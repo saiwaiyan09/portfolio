@@ -1,22 +1,24 @@
-eyebrow: "06 / Contact"
+eyebrow: 06 / Contact
 heading:
-  before: "Let's"
-  highlight: "Connect"
-description: "Interested in cloud infrastructure, DevOps, or infrastructure automation opportunities? Connect through the channels below once the profile links have been configured."
+  before: Let's
+  highlight: Connect
+description: Interested in cloud infrastructure, DevOps, or infrastructure
+  automation opportunities? Connect through the channels below once the profile
+  links have been configured.
 channels:
   email:
-    label: "✉ Email"
-    prompt: "Add your professional email address."
+    label: ✉ Email
+    prompt: saisaiwaiyan.2409@gmail.com
     address: ""
   linkedin:
-    label: "in LinkedIn"
-    prompt: "Add your public LinkedIn profile URL."
+    label: in LinkedIn
+    prompt: linkedin.com/in/saiwaiyan09/
     url: ""
   github:
-    label: "⌘ GitHub"
-    prompt: "Add your GitHub profile URL."
+    label: ⌘ GitHub
+    prompt: github.com/saiwaiyan09
     url: ""
-unconfigured_label: "Not configured yet"
+unconfigured_label: Not configured yet
 location: ""
 availability: ""
 social_links: []
